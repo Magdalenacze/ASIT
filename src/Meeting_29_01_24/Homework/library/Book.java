@@ -1,35 +1,36 @@
 package Meeting_29_01_24.Homework.library;
 
-public class Book {
+import java.io.Serializable;
+
+public class Book implements Serializable {
+
     private String booksTitle;
-    private Author author;
-    private int yearOfPublicationOfTheBook;
+    private String bookAuthor;
+    private Integer yearOfPublicationOfTheBook;
     private boolean bookAvailabilityStatus;
 
-    public Book() {
-        this.booksTitle = "";
-        this.author = new Author();
-        this.yearOfPublicationOfTheBook = 0;
-        this.bookAvailabilityStatus = true;
-    }
-
-    public Book(String booksTitle, Author bookAuthor, int yearOfPublicationOfTheBook) {
+    public Book(String booksTitle, String bookAuthor,
+                Integer yearOfPublicationOfTheBook, boolean bookAvailabilityStatus) {
         this.booksTitle = booksTitle;
-        this.author = bookAuthor;
+        this.bookAuthor = bookAuthor;
         this.yearOfPublicationOfTheBook = yearOfPublicationOfTheBook;
-        this.bookAvailabilityStatus = true;
+        this.bookAvailabilityStatus = bookAvailabilityStatus;
     }
 
     public String getBooksTitle() {
         return booksTitle;
     }
 
-    public Author getAuthor() {
-        return author;
+    public String getBookAuthor() {
+        return bookAuthor;
     }
 
     public int getYearOfPublicationOfTheBook() {
         return yearOfPublicationOfTheBook;
+    }
+
+    public boolean isBookAvailabilityStatus() {
+        return bookAvailabilityStatus;
     }
 
     public void setBookAvailabilityStatus(boolean bookAvailabilityStatus) {
@@ -39,7 +40,7 @@ public class Book {
     @Override
     public String toString() {
         return "BooksTitle: " + booksTitle + "\n" +
-                "Author: " + author.getBookAuthor() + "\n" +
+                "Author: " + bookAuthor + "\n" +
                 "YearOfPublicationOfTheBook: " + yearOfPublicationOfTheBook + "\n" +
                 "BookAvailabilityStatus: " + bookAvailabilityStatus;
     }
