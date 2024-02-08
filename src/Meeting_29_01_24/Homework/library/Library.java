@@ -31,7 +31,7 @@ public class Library {
     public List<Book> searchByBookTitle(String booksTitle) {
         List<Book> foundBooks = new LinkedList<>();
         for (Book book : books) {
-            if (book.getBooksTitle().contains(booksTitle)) {
+            if (book.getBooksTitle().toLowerCase().contains(booksTitle.toLowerCase())) {
                 foundBooks.add(book);
             }
         }
@@ -44,7 +44,7 @@ public class Library {
     public List<Book> searchByBookAuthor(String bookAuthor) {
         List<Book> foundBooks = new LinkedList<>();
         for (Book book : books) {
-            if (book.getBookAuthor().contains(bookAuthor)) {
+            if (book.getBookAuthor().toLowerCase().contains(bookAuthor.toLowerCase())) {
                 foundBooks.add(book);
             }
         }
@@ -90,7 +90,7 @@ public class Library {
     }
 
     public void addABook(String booksTitle, String bookAuthor, Integer yearOfPublicationOfTheBook) {
-        if (booksTitle.isEmpty() || bookAuthor.isEmpty() || yearOfPublicationOfTheBook <= 1950) {
+        if (booksTitle.isEmpty() || bookAuthor.isEmpty() || yearOfPublicationOfTheBook < 1950) {
             throw new RuntimeException("Sorry, it is not possible to add a book, the entered data is incorrect or incomplete!");
         }
         books.add(new Book(booksTitle, bookAuthor, yearOfPublicationOfTheBook, true));

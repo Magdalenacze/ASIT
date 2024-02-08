@@ -23,7 +23,7 @@ public class LibraryRepository {
         }
     }
 
-    public List<Book> readingFromfile() {
+    public List<Book> readingFromFile() {
         try {
             List<Book> books = (List<Book>) bookInput.readObject();
             bookInput.close();
