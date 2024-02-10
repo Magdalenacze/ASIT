@@ -1,0 +1,41 @@
+Klasa LibraryManagementSystem:
+
+main
+
+Klasa Book:
+
+pola:
+- tytuł - String booksTitle
+- autor - Author bookAuthor
+- rok wydania - int yearOfPublicationOfTheBook
+- status dostępności książki - boolean bookAvailabilityStatus
+
+gettery + setter dla bookAvailabilityStatus:
+- getBooksTitle
+- getBookAuthor
+- getYearOfPublicationOfTheBook
+- getBookAvailabilityStatus
+- setBookAvailabilityStatus
+
+Klasa Author:
+- pole String bookAuthor
+- getter getBookAuthor
+
+Klasa User:
+- wybranie z menu opcji: wyświetlania/wyszukiwania/wypożyczania/zwracania/dodawania/usuwania książek
+
+// Usera traktujemy zarówno jako czytelnika, jak i pracownika biblioteki, stąd wszystkie możliwe opcje do wybrania. Teoretycznie User powinien zawierać dane, tj. imię, nazwisko, adres, nr tel, natomiast klasy czytelnik i pracownik mogłyby rozszerzać klasę user (dziedziczyć po niej).
+
+Klasa Library:
+- funkcja dodawania nowych książek i przechowywanie ich w pamięci w postaci listy
+- funkcja usuwania książek
+- funkcja wyszukiwania książek (po tytule, autorze, roku wydania)
+- funkcja wyświetlania listy wszystkich lub dostępnych książek (w oparciu o status dostępności książki)
+- funkcja wypożyczania książek
+- funkcja zwracania książek
+- wyświetlenie menu z możliwością wyświetlania/wyszukiwania/wypożyczania/zwracania/dodawania/usuwania książek
+
+// Założenie, że w bibliotece występuje tylko jedna książka o danym tytule. 
+W rzeczywistości w bibliotece zazwyczaj jeden tytuł występuje w kilku egzemplarzach, najczęściej też z różnymi datami wydania, dlatego każdy egzemplarz książki powinien posiadać identyfikator, który jest najważniejszą informacją dla pracownika biblioteki, systemu i bazy książek.
+
+// Biblioteka "z reguły" posiada również funkcje rezerwacji wybranych egzemplarzy oraz prolongowania książek (max w wyznaczonym dniu na zwrot i tylko wtedy, jeżeli dany egzemplarz nie został wcześniej zarezerwowany przez inną osobę), jednak w tym przypadku wyżej wymienione funkcjonalności nie znajdują się na liście wymagań biznesowych, dlatego nie podlegają implementacji.
